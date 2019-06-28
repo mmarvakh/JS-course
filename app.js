@@ -4,7 +4,7 @@ let addExpenses = "FOOD,WATER,MEDICATION";
 let deposit = true;
 let mission = 1500000;
 let period = 11;
-let budgetDay = money / 30
+let budgetDay = money / 30;
 
 console.log(typeof money, typeof income, typeof deposit);
 console.log(income.length);
