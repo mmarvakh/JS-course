@@ -12,4 +12,7 @@ function getMultNumber(num) {
 let num = 266219;
 num = getMultNumber(num);
 console.log(num);   
-console.log(num ** 3);
+num = num ** 3;
+num = String(num);
+console.log(num[0] + num[1]);
+
