@@ -1,4 +1,4 @@
-function getMultNumber(num) {
+/*function getMultNumber(num) {
    let mult = 1; 
    let a = 0;
     while (num) {
@@ -7,12 +7,18 @@ function getMultNumber(num) {
         mult *= a;
     }
     return mult;
-}
+}*/
 
 let num = 266219;
-num = getMultNumber(num);
-console.log(num);   
-num = num ** 3;
-num = String(num);
-console.log(num[0] + num[1]);
+let a = 1;
+while (num > 0) {
+    a *= num % 10;
+    num = (num - num % 10) / 10;
+}
+console.log(a);
+
+
+a = a ** 3;
+a = String(a);
+console.log(a[0] + a[1]);
 
