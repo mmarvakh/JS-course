@@ -12,7 +12,7 @@ let array;
 money = prompt("Ваш месячный доход?");
 addExpenses = prompt("Перечислите возможные расходы за рассчитываемый период через запятую:");
 array = [addExpenses];
-console.log(addExpenses);
+console.log(array);
 
 deposit = confirm("Есть ли у вас депозит в банке?");
 
