@@ -18,10 +18,10 @@ deposit = confirm("Есть ли у вас депозит в банке?");
 
 console.log(typeof money, typeof income, typeof deposit);
 
-let costs_1 = 0;
-let costs_2 = 0;
-let price_1 = 0;
-let price_2 = 0;
+let costs_1;
+let costs_2;
+let price_1;
+let price_2;
 
 costs_1 = prompt("Какие обязательные ежемесячные расходы у вас есть?");
 price_1 = prompt("Во сколько это обойдется?");
