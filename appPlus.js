@@ -27,7 +27,9 @@ console.log((lang === "ru") ? (array[0][0]) : (array[1][0]));
 
 // Второе задание
 let namePerson = prompt("Введите имя:");
-console.log(namePerson === "Артем" ? "Директор" : namePerson === "Максим" ? "Преподаватель" : "Студент");
+console.log(namePerson === "Артем" ? "Директор" :
+            namePerson === "Максим" ? "Преподаватель" :
+            "Студент");
 
 
 
