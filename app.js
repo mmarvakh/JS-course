@@ -2,14 +2,14 @@
 // Первое задание
 let arr = [];
 
-/*for (let i = 0; i < 7; i++) {
+for (let i = 0; i < 7; i++) {
     arr.push(prompt("Введите любое многозначное число"));
     let str = arr[i];
     if (str[0] == 2 || str[0] == 4){
         console.log(arr[i]);
     } 
 }
-*/
+
 // Второе задание
 forNumb:
 for (var i = 2; i <= 100; i++) {
