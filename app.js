@@ -1,29 +1,23 @@
 'use strict';
+// Первое задание
+let arr = [];
 
-// Первая часть
-function getArgument(arg) {
-    if (typeof arg !== "string") {
-        return "На вход поступила не строка";
-    } else {
-        arg = arg.trim();
-        return arg;
+/*for (let i = 0; i < 7; i++) {
+    arr.push(prompt("Введите любое многозначное число"));
+    let str = arr[i];
+    if (str[0] == 2 || str[0] == 4){
+        console.log(arr[i]);
+    } 
+}
+*/
+// Второе задание
+forNumb:
+for (var i = 2; i <= 100; i++) {
+    for (var j = 2; j < i; j++) {
+        if (i % j == 0) {
+         continue forNumb;
+        }
     }
-}
+    console.log(i + " - Делители этого числа: 1 и " + i);
+  }
 
-let str = prompt("Введите строку или число");
-if (str >= 0) {
-    str *= 1;
-} else {
-    str = str;
-}
-console.log(getArgument(str));
-
-// Вторая часть
-function testArgument(testString) {
-    if (testString.length > 30) {
-        return testString = testString.substr(0, 31) + "...";
-    } else {
-        return testString;
-    }
-}
-console.log(testArgument(str));
