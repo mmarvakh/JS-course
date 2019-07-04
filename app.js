@@ -4,7 +4,7 @@ let week = ["Воскресенье", "Понедельник", "Вторник"
 
 let date = new Date();
 date = date.getUTCDay();
-console.log(date);
+
 for (let i = 0; i < 7; i++) {
     if (i === date) {
         console.log(week[i].bold());
