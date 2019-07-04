@@ -1,23 +1,16 @@
 'use strict';
-// Первое задание
-let arr = [];
 
+let week = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+
+let date = new Date();
+date = date.getUTCDay();
+console.log(date);
 for (let i = 0; i < 7; i++) {
-    arr.push(prompt("Введите любое многозначное число"));
-    let str = arr[i];
-    if (str[0] == 2 || str[0] == 4){
-        console.log(arr[i]);
-    } 
-}
-
-// Второе задание
-forNumb:
-for (var i = 2; i <= 100; i++) {
-    for (var j = 2; j < i; j++) {
-        if (i % j == 0) {
-         continue forNumb;
-        }
+    if (i === date) {
+        console.log(week[i].bold());
+    } else if (i === 0 || i === 6) {
+        console.log(week[i].italics());
+    } else {
+        console.log(week[i]);
     }
-    console.log(i + " - Делители этого числа: 1 и " + i);
-  }
-
+}
