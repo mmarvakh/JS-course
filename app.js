@@ -7,10 +7,12 @@ date = date.getUTCDay();
 
 for (let i = 0; i < 7; i++) {
     if (i === date) {
-        console.log(week[i].bold());
+        week[i] = week[i].bold();
     } else if (i === 0 || i === 6) {
-        console.log(week[i].italics());
+        week[i] = week[i].italics();
     } else {
-        console.log(week[i]);
+        week[i] = week[i];
     }
 }
+
+document.writeln(week.join(", <br>"));
