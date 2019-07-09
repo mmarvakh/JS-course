@@ -17,7 +17,8 @@ let salaryAmount = document.querySelector(".salary-amount"),
     expensesTitle = document.querySelector(".expenses-title"),
     expensesAmount = document.querySelector(".expenses-amount"),
     additionalExpenses = document.querySelector(".additional_expenses-item"),
-    target = document.querySelector(".target-amount");
+    target = document.querySelector(".target-amount"),
+    inputRange = document.querySelector(".period-select");
 
 
 
