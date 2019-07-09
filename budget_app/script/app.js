@@ -1,6 +1,6 @@
 "use strict";
 
-let button = document.querySelectorAll("#start");
+let button = document.getElementById("#start");
 
 let buttonPlus1 = document.getElementsByTagName("button")[0],
     buttonPlus2 = document.getElementsByTagName("button")[1];
