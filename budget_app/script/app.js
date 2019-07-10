@@ -58,12 +58,14 @@ let appData = {
     budgetMonth: 0,
     expensesMonth: 0,
     targetMonth: 0,
-    start: function () {   
+    start: function () { 
         if (salaryAmount.value === "") {
+            buttonStart.setAttribute("disabled", "true");
             alert("Ошибка, поле 'Месячный доход' должно быть заполнено");
+            buttonStart.removeAttribute("disabled");
             return;
-        }
-
+        } 
+    
         appData.budget = salaryAmount.value;
         appData.budget *= 1;
         
