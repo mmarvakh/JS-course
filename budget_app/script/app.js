@@ -59,22 +59,22 @@ let appData = {
     expensesMonth: 0,
     targetMonth: 0,
     start: function () { 
-        appData.budget = salaryAmount.value;
-        appData.budget *= 1;
+        this.budget = salaryAmount.value;
+        this.budget *= 1;
     
-        appData.getExpenses();
-        appData.getIncome();
-        appData.getExpensesMonth();
-        appData.getAddExpenses();
-        appData.getAddIncome();
-        appData.getBudget();
+        this.getExpenses();
+        this.getIncome();
+        this.getExpensesMonth();
+        this.getAddExpenses();
+        this.getAddIncome();
+        this.getBudget();
 
-        appData.showResult();
+        this.showResult();
         let blockInput = document.querySelectorAll("input");
         blockInput.forEach(function (item) {
             item.disabled = true;
         });
-        buttonCancel.addEventListener("click", appData.reset);
+        buttonCancel.addEventListener("click", this.reset);
         buttonStart.style.visibility = "hidden";
         buttonCancel.style.visibility = "visible";
     },
@@ -255,7 +255,9 @@ salaryAmount.addEventListener("input", function () {
     }
 });
 
-buttonStart.addEventListener("click", appData.start);
+
+
+buttonStart.addEventListener("click", appData.start.bind(appData));
 buttonPlus2.addEventListener("click", appData.addExpensesBlock);
 buttonPlus1.addEventListener("click", appData.addIncomeBlock);
 inputRange.addEventListener("mousemove", appData.rangeChange);
