@@ -1,4 +1,5 @@
-"use strict";
+document.addEventListener("DOMContentLoaded", function () {
+    "use strict";
 
 function DomElement (selector, height, width, bg, fontSize) {
     this.selector = selector;
@@ -17,7 +18,9 @@ DomElement.prototype.create = function () {
             block.style.cssText = "height: 100px; \
             width: 100px; \
             background-color: yellow; \
-            font-size: 16px;";
+            font-size: 16px; \
+            position: absolute;";
+            block.textContent = this.selector;
             parent = document.body;
             parent.appendChild(block);
         } else if (this.selector[0] === "#") {
@@ -26,7 +29,9 @@ DomElement.prototype.create = function () {
             block.cssText = "height: 100px; \
             width: 100px; \
             background-color: yellow; \
-            font-size: 16px;";
+            font-size: 16px; \
+            position: absolute;";
+            block.textContent = this.selector;
             parent = document.body;
             parent.appendChild(block);
         }
@@ -35,3 +40,4 @@ DomElement.prototype.create = function () {
 let DomElementChild = new DomElement(".Лиса");
 console.log(DomElementChild);
 DomElementChild.create();
+});
