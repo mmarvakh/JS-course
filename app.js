@@ -1,5 +1,6 @@
+"use strict";
+
 document.addEventListener("DOMContentLoaded", function () {
-    "use strict";
 
 function DomElement (selector, height, width, bg, fontSize) {
     this.selector = selector;
@@ -15,12 +16,10 @@ DomElement.prototype.create = function () {
         if (this.selector[0] === ".") {
             block = document.createElement("div");
             block.className = this.selector.slice(1);
-            block.style.cssText = "height: 100px; \
-            width: 100px; \
-            background-color: yellow; \
-            font-size: 16px; \
-            position: absolute; \
-            margin: auto auto";
+            block.style.cssText = `${"height:" + this.height + ";"} \
+            ${"width:" + this.width + ";"} \
+            ${"background-color:" + this.bg + ";"} \
+            ${"font-size:" + this.fontSize + ";"}`;
             block.textContent = this.selector;
             parent = document.body;
             parent.style.cssText = "margin: 0 \
@@ -30,18 +29,17 @@ DomElement.prototype.create = function () {
         } else if (this.selector[0] === "#") {
             block = document.createElement("p");
             block.className = this.selector.slice(1);
-            block.cssText = "height: 100px; \
-            width: 100px; \
-            background-color: yellow; \
-            font-size: 16px; \
-            position: absolute;";
+            block.cssText = `${"height:" + this.height + ";"} \
+            ${"width:" + this.width + ";"} \
+            ${"background-color:" + this.bg + ";"} \
+            ${"font-size:" + this.fontSize + ";"}`;
             block.textContent = this.selector;
             parent = document.body;
             parent.appendChild(block);
         }
     };
 
-let DomElementChild = new DomElement(".Лиса");
+let DomElementChild = new DomElement(".Лиса", 100, 100, "yellow", "16px");
 console.log(DomElementChild);
 DomElementChild.create();
 
