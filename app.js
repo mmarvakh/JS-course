@@ -32,17 +32,19 @@ DomElement.prototype.create = function () {
         if (this.selector[0] === "#") {
             block = document.createElement("p");
             block.className = this.selector.slice(1);
-            block.style.cssText = `${"height:" + this.height + ";"} \
-            ${"width:" + this.width + ";"} \
-            ${"background-color:" + this.bg + ";"} \
-            ${"font-size:" + this.fontSize + ";"}`;
+            block.style.cssText = `height: ${this.height}px; 
+            width: ${this.width}px; 
+            background-color: ${this.bg};
+            font-size: ${this.fontSize};
+            margin: auto auto;
+            position: absolute;`;
             block.textContent = this.selector.slice(1);
             parent = document.body;
             parent.appendChild(block);
         }
     };
 
-let DomElementChild = new DomElement(".jija", 100, 100, "green", "16px");
+let DomElementChild = new DomElement("#jija", 100, 100, "green", "16px");
 console.log(DomElementChild);
 DomElementChild.create();
 
