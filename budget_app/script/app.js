@@ -103,12 +103,10 @@ class appData {
         });
     };
 
-    addBlock (item, button) {
+    addBlock (item, button, className) {
         let cloneItem = item[0].cloneNode(true);
         item[0].parentNode.insertBefore(cloneItem, button);
-        let parent = item.className;
-        console.log(parent);
-        item = document.querySelectorAll(`.${parent}`);
+        item = document.querySelectorAll(className);
         if (item.length === 3) {
             button.style.display = "none";
         }
@@ -302,8 +300,12 @@ window.onload = function () {
 }
 
 buttonStart.addEventListener("click", getBudgetData.start.bind(getBudgetData));
-buttonPlus1.addEventListener("click", getBudgetData.addBlock(incomeItems, buttonPlus1));
-buttonPlus2.addEventListener("click", getBudgetData.addBlock(expensesItems, buttonPlus2));
+buttonPlus1.addEventListener("click", function () {
+    getBudgetData.addBlock(incomeItems, buttonPlus1, ".income-items");
+});
+buttonPlus2.addEventListener("click", function () {
+    getBudgetData.addBlock(expensesItems, buttonPlus2, ".expenses-items");
+});
 inputRange.addEventListener("mousemove", getBudgetData.rangeChange);
 
 
