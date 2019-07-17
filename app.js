@@ -1,74 +1,54 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", function () {
+const divBlock = document.createElement("div");
+divBlock.style.width = "100px";
+divBlock.style.height = "100px";
+divBlock.style.background = "yellow";
+divBlock.style.position = "relative";
 
-let block;
-let parent;
+let count = 0,
+    animate;
 
-function DomElement (selector, height, width, bg, fontSize, margin, position) {
-    this.selector = selector;
-    this.height = height;
-    this.width = width;
-    this.bg = bg;
-    this.fontSize = fontSize;
-    this.margin = margin;
-    this.position = position;
+const parent = document.body;
+parent.appendChild(divBlock);
+
+let button = document.createElement("button"),
+    reset = document.createElement("button");
+button.style.height = "40px";
+button.style.width = "60px";
+button.style.background = "black";
+parent.appendChild(button);
+
+reset.style.height = "40px";
+reset.style.width = "60px";
+reset.style.background = "red";
+reset.style.color = "white";
+reset.textContent = "reset";
+parent.appendChild(reset);
+
+let Animate = function () {
+    animate = requestAnimationFrame(Animate);
+    count++;
+    if (count < 350) {
+        divBlock.style.left = count * 2 + "px";
+    } else {
+        cancelAnimationFrame(animate);
+    }
 }
 
-DomElement.prototype.create = function () {
-        if (this.selector[0] === ".") {
-            block = document.createElement("div");
-            block.className = this.selector.slice(1);
-            block.style.cssText = `height: ${this.height}px; 
-            width: ${this.width}px; 
-            background-color: ${this.bg};
-            font-size: ${this.fontSize};
-            margin: auto auto;
-            position: absolute;`;
-            block.textContent = this.selector.slice(1);
-            parent = document.body;
-            parent.appendChild(block);
-        } 
-        if (this.selector[0] === "#") {
-            block = document.createElement("p");
-            block.className = this.selector.slice(1);
-            block.style.cssText = `height: ${this.height}px; 
-            width: ${this.width}px; 
-            background-color: ${this.bg};
-            font-size: ${this.fontSize};
-            margin: auto auto;
-            position: absolute;`;
-            block.textContent = this.selector.slice(1);
-            parent = document.body;
-            parent.appendChild(block);
-        }
-    };
+let animation = false;
 
-let DomElementChild = new DomElement("#jija", 100, 100, "green", "16px");
-console.log(DomElementChild);
-DomElementChild.create();
-
-let top = 0,
-    left = 0,
-    right = 0,
-    bottom = 0;
-
-document.onkeydown = function (event) {
-    if (event.key === "ArrowRight") {
-        block.style.left = left + "px";
-        left += 10;
+button.addEventListener("click", function () {
+    if (animation) {
+        animate = requestAnimationFrame(Animate);
+        animation = false;
+    } else {
+        animation = true;
+        cancelAnimationFrame(animate);
     }
-    if (event.key === "ArrowDown") {
-        block.style.top = top + "px";
-        top += 10;
-    }
-    if (event.key === "ArrowUp") {
-        block.style.bottom = bottom + "px";
-        bottom +=10;
-    }
-    if (event.key === "ArrowLeft") {
-        block.style.right = right + "px";
-        right += 10;
-    }
-};
 });
+
+reset.addEventListener("click", function () {
+    divBlock.style.left = 0;
+    count = 0;
+})
