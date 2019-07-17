@@ -70,8 +70,7 @@ class appData {
         this.getExpenses();
         this.getIncome();
         this.getExpensesMonth();
-        this.getAddExpenses();
-        this.getAddIncome();
+        this,this.getAdd();
         this.getInfoDeposit();
         this.getBudget();
 
@@ -244,7 +243,7 @@ class appData {
         change.textContent = inputRange.value;
     };
 
-    getAddExpenses () {
+    getAdd () {
         let addExpenses = additionalExpenses.value.split(',');
         addExpenses.forEach((item) => {
             item = item.trim();
@@ -252,9 +251,7 @@ class appData {
                 this.addExpenses.push(item);
             }
         });
-    };
 
-    getAddIncome () {
         additionalIncome.forEach((item) => {
             let itemValue = item.value.trim();
             if (item !== "") {
