@@ -76,7 +76,7 @@ class appData {
 
         this.showResult();
 
-        let blockInput = document.querySelectorAll("input");
+        const blockInput = document.querySelectorAll("input");
         blockInput.forEach(function (item) {
             item.disabled = true;
         });
@@ -103,15 +103,16 @@ class appData {
         });
     };
 
-    addBlock () {
-         buttonPlus1.onclick = function () {
-            let cloneIncomeItem = incomeItems[0].cloneNode(true);
-            incomeItems[0].parentNode.insertBefore(cloneIncomeItem, buttonPlus1);
-            incomeItems = document.querySelectorAll(".income-items");
-        if (incomeItems.length === 3) {
-            buttonPlus1.style.display = "none";
+    addBlock (item, button) {
+        let cloneItem = item[0].cloneNode(true);
+        item[0].parentNode.insertBefore(cloneItem, button);
+        let parent = item.className;
+        console.log(parent);
+        item = document.querySelectorAll(`.${parent}`);
+        if (item.length === 3) {
+            button.style.display = "none";
         }
-        cloneIncomeItem.querySelectorAll("input").forEach(function (item) {
+        cloneItem.querySelectorAll("input").forEach(function (item) {
             item.value = "";
             item.addEventListener("input", function () {
                 if (item.getAttribute("placeholder") === "Сумма") {
@@ -121,32 +122,12 @@ class appData {
                     item.value = item.value.replace(/[^А-я\s.,]/, "");
                 }
             })
-        });
-        } 
-        buttonPlus2.onclick = function () {
-            let cloneExpensesItem = expensesItems[0].cloneNode(true);
-            expensesItems[0].parentNode.insertBefore(cloneExpensesItem, buttonPlus2);
-            expensesItems = document.querySelectorAll(".expenses-items");
-            if (expensesItems.length === 3) {
-                buttonPlus2.style.display = "none";
-            }
-            cloneExpensesItem.querySelectorAll("input").forEach(function (item) {
-                item.value = "";
-                item.addEventListener("input", function () {
-                    if (item.getAttribute("placeholder") === "Сумма") {
-                        item.value = item.value.replace(/[^0-9]/, "");
-                        }
-                    if (item.getAttribute("placeholder") === "Наименование" || item.getAttribute("placeholder") === "название")         {
-                        item.value = item.value.replace(/[^А-я\s.,]/, "");
-                        }
-                })
-            });
-        }
+        });  
     };
 
     getExpenses () {
         expensesItems.forEach((item) => {
-            let itemExpenses = item.querySelector(".expenses-title").value,
+            const itemExpenses = item.querySelector(".expenses-title").value,
                   cashExpenses = item.querySelector(".expenses-amount").value;
             if (itemExpenses !== "" && cashExpenses !== "") {
                 this.expenses[itemExpenses] = cashExpenses;
@@ -155,13 +136,13 @@ class appData {
     };
 
     reset () {
-        let blockInput = document.querySelectorAll("input");
+        const blockInput = document.querySelectorAll("input");
         blockInput.forEach ((item) => {
             item.value = "";
             item.disabled = false;
         });
 
-        let blockAddIncome = document.querySelectorAll(".income-items");
+        const blockAddIncome = document.querySelectorAll(".income-items");
 
         if (blockAddIncome[1]) {
             blockAddIncome[1].style.display = "none";
@@ -173,7 +154,7 @@ class appData {
 
         buttonPlus1.style.display = "inline-block";
 
-        let blockAddExpenses = document.querySelectorAll(".expenses-items");
+        const blockAddExpenses = document.querySelectorAll(".expenses-items");
 
         if (blockAddExpenses[1]) {
             blockAddExpenses[1].style.display = "none";
@@ -187,7 +168,7 @@ class appData {
         buttonStart.disabled = true;
         inputRange.value = 1;
 
-        let resetSelect = document.querySelector("select"),
+        const resetSelect = document.querySelector("select"),
             change = document.querySelector(".period-amount");
 
         checkboxDeposit.checked = false;
@@ -201,7 +182,7 @@ class appData {
 
     getIncome () {
         incomeItems.forEach((item) => {
-            let itemIncome = item.querySelector(".income-title").value,
+            const itemIncome = item.querySelector(".income-title").value,
                 cashIncome = item.querySelector(".income-amount").value;
             if (itemIncome !== "" && cashIncome !== "") {
                 this.income[itemIncome] = cashIncome;
@@ -239,12 +220,12 @@ class appData {
     };
     
     rangeChange () {
-        let change = document.querySelector(".period-amount");
+        const change = document.querySelector(".period-amount");
         change.textContent = inputRange.value;
     };
 
     getAdd () {
-        let addExpenses = additionalExpenses.value.split(',');
+        const addExpenses = additionalExpenses.value.split(',');
         addExpenses.forEach((item) => {
             item = item.trim();
             if (item !== "") {
@@ -253,7 +234,7 @@ class appData {
         });
 
         additionalIncome.forEach((item) => {
-            let itemValue = item.value.trim();
+            const itemValue = item.value.trim();
             if (item !== "") {
                 this.addIncome.push(itemValue);
             }
@@ -314,15 +295,15 @@ class appData {
     };
 };
 
-let getBudgetData = new appData();
+const getBudgetData = new appData();
 
 window.onload = function () {
     getBudgetData.allEventsListener();
 }
 
 buttonStart.addEventListener("click", getBudgetData.start.bind(getBudgetData));
-buttonPlus1.addEventListener("mousemove", getBudgetData.addBlock);
-buttonPlus2.addEventListener("mousemove", getBudgetData.addBlock);
+buttonPlus1.addEventListener("click", getBudgetData.addBlock(incomeItems, buttonPlus1));
+buttonPlus2.addEventListener("click", getBudgetData.addBlock(expensesItems, buttonPlus2));
 inputRange.addEventListener("mousemove", getBudgetData.rangeChange);
 
 
