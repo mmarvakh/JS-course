@@ -70,7 +70,7 @@ class appData {
         this.getExpenses();
         this.getIncome();
         this.getExpensesMonth();
-        this,this.getAdd();
+        this.getAdd();
         this.getInfoDeposit();
         this.getBudget();
 
