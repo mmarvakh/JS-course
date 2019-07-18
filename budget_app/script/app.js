@@ -22,7 +22,7 @@ let budgetDayValue = document.getElementsByClassName("budget_day-value")[0],
 
 let salaryAmount = document.querySelector(".salary-amount"),
     expensesItems = document.querySelectorAll(".expenses-items"),
-    additionalExpenses = document.querySelector(".additional_expenses-item"),
+    additionalExpenses = document.querySelectorAll(".additional_expenses-item"),
     targetAmount = document.querySelector(".target-amount"),
     inputRange = document.querySelector(".period-select"),
     incomeItems = document.querySelectorAll(".income-items"),
@@ -70,7 +70,8 @@ class appData {
         this.getExpenses();
         this.getIncome();
         this.getExpensesMonth();
-        this.getAdd();
+        this.getAdd(additionalIncome, this.addIncome);
+        this.getAdd(additionalExpenses, this.addExpenses);
         this.getInfoDeposit();
         this.getBudget();
 
@@ -222,19 +223,11 @@ class appData {
         change.textContent = inputRange.value;
     };
 
-    getAdd () {
-        const addExpenses = additionalExpenses.value.split(',');
-        addExpenses.forEach((item) => {
-            item = item.trim();
+    getAdd (additional, place) {
+        additional.forEach((item) => {
+            const itemValue = item.value.split(",");
             if (item !== "") {
-                this.addExpenses.push(item);
-            }
-        });
-
-        additionalIncome.forEach((item) => {
-            const itemValue = item.value.trim();
-            if (item !== "") {
-                this.addIncome.push(itemValue);
+                place.push(itemValue);
             }
         });
     };
@@ -300,12 +293,14 @@ window.onload = function () {
 }
 
 buttonStart.addEventListener("click", getBudgetData.start.bind(getBudgetData));
+
 buttonPlus1.addEventListener("click", function () {
     getBudgetData.addBlock(incomeItems, buttonPlus1, ".income-items");
 });
 buttonPlus2.addEventListener("click", function () {
     getBudgetData.addBlock(expensesItems, buttonPlus2, ".expenses-items");
 });
+
 inputRange.addEventListener("mousemove", getBudgetData.rangeChange);
 
 
