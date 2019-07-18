@@ -46,5 +46,5 @@ window.addEventListener("DOMContentLoaded", function () {
         }
         updateClock();
     }
-    countTimer("18 july 2019");
+    countTimer("19 july 2019");
 });
