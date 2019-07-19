@@ -104,13 +104,23 @@ window.addEventListener("DOMContentLoaded", () => {
 
         popupBtn.forEach((elem) => {
             elem.addEventListener("click", () => {
-                popup.style.display = "block";
-                animate = requestAnimationFrame(animationUp);
+                if (document.documentElement.offsetWidth < 500) {
+                    popup.style.display = "block";
+                    popup.style.transform = `translateY(0)`;
+                } else {
+                    popup.style.display = "block";
+                    animate = requestAnimationFrame(animationUp);
+                }
             });
         });
 
         popupClose.addEventListener("click", () => {
-            animate = requestAnimationFrame(animationDown);
+            if (document.documentElement.offsetWidth < 500) {
+                popup.style.display = "none";
+                popup.style.transform = `translateY(-100%)`;
+            } else {
+                animate = requestAnimationFrame(animationDown);
+            }
         });
     };
     togglePopUp();
