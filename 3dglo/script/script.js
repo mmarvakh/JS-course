@@ -54,15 +54,30 @@ window.addEventListener("DOMContentLoaded", () => {
               menu = document.querySelector("menu"),
               closeBtn = document.querySelector(".close-btn"),
               menuItems = menu.querySelectorAll("ul>li"),
-              btnNext = document.querySelectorAll("img")[3],
               linkInMain = document.querySelector("a");
 
         const handlerMenu = () => {
-           menu.classList.toggle("active-menu");
+            menu.classList.toggle("active-menu");           
+        ;}
+
+        const handlerMenuExtra = () => {
+            if (!menu.style.transform || menu.style.transform === `translate(-100%)`) {
+                menu.style.transform = `translate(0)`;
+            } else {
+                menu.style.transform = `translate(-100%)`;
+            }
         };
 
-        btnMenu.addEventListener("click", handlerMenu);
-        closeBtn.addEventListener("click", handlerMenu);
+        const checkHandler = () => {
+            if (document.documentElement.offsetWidth < 600) {
+                handlerMenuExtra();
+            } else {
+                handlerMenu();
+            }
+        }
+
+        btnMenu.addEventListener("click", checkHandler);
+        closeBtn.addEventListener("click", checkHandler);
 
         // Плавный переход на следующий блок при нажатии на кнопку в main
         linkInMain.removeAttribute("href");
