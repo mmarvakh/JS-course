@@ -53,17 +53,35 @@ window.addEventListener("DOMContentLoaded", () => {
         const btnMenu = document.querySelector(".menu"),
               menu = document.querySelector("menu"),
               closeBtn = document.querySelector(".close-btn"),
-              menuItems = menu.querySelectorAll("ul>li");
+              menuItems = menu.querySelectorAll("ul>li"),
+              btnNext = document.querySelectorAll("img")[3],
+              linkInMain = document.querySelector("a");
 
         const handlerMenu = () => {
            menu.classList.toggle("active-menu");
-        }
+        };
 
         btnMenu.addEventListener("click", handlerMenu);
         closeBtn.addEventListener("click", handlerMenu);
 
+        // Плавный переход на следующий блок при нажатии на кнопку в main
+        linkInMain.removeAttribute("href");
+        linkInMain.style.cursor = "pointer";
+        linkInMain.addEventListener("click", () => {
+            document.querySelector("#service-block").scrollIntoView({behavior: "smooth"});
+        });
+
+        // Плавный переход из меню к элементам
         menuItems.forEach((elem) => {
-            elem.addEventListener("click", handlerMenu);
+            let elemId = elem.querySelector("a");
+                elemId.style.pointerEvents = "none";
+                elem.style.cursor = "pointer";
+            elem.addEventListener("click", () => {
+                handlerMenu();
+                let elemIdHref = elemId.getAttribute("href").slice(1);
+                let blockId = document.getElementById(`${elemIdHref}`);
+                    blockId.scrollIntoView({behavior: "smooth"});
+            });
         });
     }
     toggleMunu();
