@@ -77,17 +77,18 @@ window.addEventListener("DOMContentLoaded", () => {
         bodyContainer.addEventListener("click", (event) => {
             let targetMenuOpen = event.target,
                 targetMenuSpace = event.target,
-                targetMenuClose = event.target;
+                targetMenuClose = event.target,
+                target = event.target;
 
                 targetMenuOpen = targetMenuOpen.closest(".menu");
                 targetMenuClose = targetMenuClose.closest(".close-btn");
-                targetMenuSpace = targetMenuSpace.closest("menu");
+                targetMenuSpace = document.querySelector("menu");
 
             if (targetMenuOpen) {
                 checkHandler();
             } else if (targetMenuClose) {
                 checkHandler();
-            } else if (!targetMenuSpace) {
+            } else if (targetMenuSpace !== target && menu.classList.contains("active-menu")) {
                 checkHandler();
             }
         });
