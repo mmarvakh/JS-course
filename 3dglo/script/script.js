@@ -183,7 +183,7 @@ window.addEventListener("DOMContentLoaded", () => {
     };
     togglePopUp();
 
-    // tabs
+    // Tabs
     const tabs = () => {
         const tabHeader = document.querySelector(".service-header"),
               tab = tabHeader.querySelectorAll(".service-header-tab"),
@@ -215,7 +215,7 @@ window.addEventListener("DOMContentLoaded", () => {
     };
     tabs();
 
-    // slider
+    // Slider
     const slider = () => {
         const slide = document.querySelectorAll(".portfolio-item"),
               portfolioDots = document.querySelector(".portfolio-dots"),
@@ -317,5 +317,39 @@ window.addEventListener("DOMContentLoaded", () => {
         startSlide(2000);
     };
     slider();
+
+    // Our team block
+    const team = () => {
+        const imagesTeam = document.querySelectorAll(".command__photo");
+
+        const changeData = () => {
+            imagesTeam.forEach((elem) => {
+                let srcImg = elem.getAttribute("src");
+
+                elem.addEventListener("mouseenter", (event) => {
+                    event.target.src = event.target.dataset.img;
+                });
+
+                elem.addEventListener("mouseleave", (event) => {
+                    event.target.src = srcImg;
+                });
+            });
+        };
+        changeData();
+    };
+    team();
+
+    // Calculator
+    const calc = () => {
+        const calcBlock = document.querySelector(".calc-block"),
+              calcInput = calcBlock.querySelectorAll("input");
+        
+        calcInput.forEach((elem) => {
+            elem.addEventListener("input", () => {
+                elem.value = elem.value.replace(/\D/g, "");
+            });
+        });
+    };
+    calc();
 });
  
