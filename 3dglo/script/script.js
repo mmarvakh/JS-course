@@ -221,9 +221,8 @@ window.addEventListener("DOMContentLoaded", () => {
               portfolioDots = document.querySelector(".portfolio-dots"),
               slider = document.querySelector(".portfolio-content");
 
-        let countForDots = 0,
-            dotForSlider = document.createElement("li");
-            dotForSlider.classList.add("dot");
+        const dotForSlider = document.createElement("li");
+              dotForSlider.classList.add("dot");
 
         for (let i = 0; i < slide.length; i++) {
             dotForSlider = document.createElement("li");
