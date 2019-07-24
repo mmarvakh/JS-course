@@ -234,13 +234,9 @@ window.addEventListener("DOMContentLoaded", () => {
             portfolioDots.appendChild(dotForSlider);
         }
 
-        console.log(countForDots);
-
         countForDots = 0;
 
         const dot = document.querySelectorAll(".dot");
-
-        console.log(dot);
 
         let currentSlide = 0,
             interval;
