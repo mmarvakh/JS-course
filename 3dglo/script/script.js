@@ -376,7 +376,23 @@ window.addEventListener("DOMContentLoaded", () => {
                 total = price * typeValue * squareValue * countValue * dayValue;
             }
 
-            totalValue.textContent = total;
+            let animate;
+            let count = 0;
+
+            const animateNumb = () => {
+                animate = requestAnimationFrame(animateNumb);
+                
+                if (count <= total) {
+                    totalValue.textContent = count;
+                    count += 2;
+                } else {
+                    cancelAnimationFrame(animate);
+                }
+            };
+
+            if (total > 0) {
+                animate = requestAnimationFrame(animateNumb);
+            }
         };
 
         calcBlock.addEventListener("change", (event) => {
