@@ -384,7 +384,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 
                 if (count <= total) {
                     totalValue.textContent = count;
-                    count += 2;
+                    count += 50;
                 } else {
                     cancelAnimationFrame(animate);
                 }
