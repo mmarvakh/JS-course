@@ -42,9 +42,3 @@ calc(100);
 
 // send-ajax-form
 sendForm();
-
-// send-ajax-form-modal
-sendFormModal();
-
-// send-ajax-form-footer
-sendFormFooter();
