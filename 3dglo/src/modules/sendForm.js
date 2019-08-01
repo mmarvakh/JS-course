@@ -6,9 +6,9 @@ const sendForm = () => {
     const form = document.querySelectorAll("form"),
           statusMessage = document.createElement("div");
           statusMessage.style.cssText = "font-size: 2rem;";
+          statusMessage.style.color = "white";
 
     const formInput = document.querySelectorAll("input"); 
-    console.log(formInput);
     formInput.forEach((elem) => {
         elem.addEventListener("input", () => {
             if (elem.getAttribute("id") === "form1-name" || elem.getAttribute("id") === "form2-name" || elem.getAttribute("id") === "form3-name") {
@@ -21,6 +21,10 @@ const sendForm = () => {
 
             if (elem.getAttribute("id") === "form2-message") {
                 elem.value = elem.value.replace(/[A-z\.\?,0-9\-\+=!@#№\$%\^&\*\.\/<>\?\(\)~`;:\(\)\/"']/gi, "");
+            }
+
+            if (elem.getAttribute("id") === "form1-email" || elem.getAttribute("id") === "form2-email" || elem.getAttribute("id") === "form3-email") {
+                elem.value = elem.value.replace(/[А-я!"'#№$;:%^&\?\*\(\)\+=]/gi, "");
             }
         });
     });
@@ -38,7 +42,7 @@ const sendForm = () => {
     
             statusMessage.textContent = loadMessage;
     
-            const formData = new FormData(form);
+            const formData = new FormData(elem);
     
             let body = {};
     
