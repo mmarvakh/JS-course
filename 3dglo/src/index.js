@@ -16,8 +16,6 @@ import slider from "./modules/slider";
 import team from "./modules/team";  
 import calc from "./modules/calc";  
 import sendForm from "./modules/sendForm";  
-import sendFormModal from "./modules/sendFormModal";  
-import sendFormFooter from "./modules/sendFormFooter";  
 
 // Timer
 countTimer("4 august 2019");
