@@ -12,15 +12,15 @@ const sendForm = () => {
     formInput.forEach((elem) => {
         elem.addEventListener("input", () => {
             if (elem.getAttribute("id") === "form1-name" || elem.getAttribute("id") === "form2-name" || elem.getAttribute("id") === "form3-name") {
-                elem.value = elem.value.replace(/[A-z\.\?,0-9\-\+=!@#№\$%\^&\*\.\/<>\?\(\)~`;:\(\)\/"]/gi, "");
+                elem.value = elem.value.replace(/[A-z\.\?,0-9\-\+=!@#№\$%\^&\*\.\/<>\?\(\)~`;:\(\)\/"']/gi, "");
             }
 
             if (elem.getAttribute("id") === "form1-phone" || elem.getAttribute("id") === "form2-phone" || elem.getAttribute("id") === "form3-phone") {
-                elem.value = elem.value.replace(/[A-z-А-я,\-=!@#№\$%\^&\*\.\/<>\?\(\)~`;:\(\)\/"]/gi, "");
+                elem.value = elem.value.replace(/[A-z-А-я,\-=!@#№\$%\^&\*\.\/<>\?\(\)~`;:\(\)\/"']/gi, "");
             }
 
             if (elem.getAttribute("id") === "form2-message") {
-                elem.value = elem.value.replace(/[A-z\.\?,0-9\-\+=!@#№\$%\^&\*\.\/<>\?\(\)~`;:\(\)\/"]/gi, "");
+                elem.value = elem.value.replace(/[A-z\.\?,0-9\-\+=!@#№\$%\^&\*\.\/<>\?\(\)~`;:\(\)\/"']/gi, "");
             }
         });
     });
