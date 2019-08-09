@@ -10,6 +10,10 @@ import "formdata-polyfill";
 
 
 import scrollToNextPage from "./modules/scrollToNextPage";
+import menuItems from "./modules/menuItems";
 
 // Переход на следующий слайд по нажатию на кнопку в виде стрелки
 scrollToNextPage();
+
+// Плавный переход по нажатию на пункты из меню в header
+menuItems();
