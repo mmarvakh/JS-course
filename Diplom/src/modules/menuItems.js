@@ -17,10 +17,8 @@ const menuItems = () => {
             });
         });
 
-        
-
         window.addEventListener("scroll", () => {
-            if (pageYOffset < 250) {
+            if (pageYOffset < 100) {
                 menuMini.style.display = "none";
             } else {
                 menuMini.style.display = "block";
