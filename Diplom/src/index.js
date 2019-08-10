@@ -13,6 +13,7 @@ import scrollToNextPage from "./modules/scrollToNextPage";
 import menuItems from "./modules/menuItems";
 import modalSupport from "./modules/modalSupport";
 import modalOffer from "./modules/modalOffer";
+import calculator from "./modules/calculator";
 
 // Переход на следующий слайд по нажатию на кнопку в виде стрелки
 scrollToNextPage();
@@ -25,3 +26,6 @@ modalSupport();
 
 // Открытие и закрытие модального окна(Оставить заявку)
 modalOffer();
+
+// Калькулятор расчета стоимости услуг
+calculator();

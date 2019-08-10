@@ -17,15 +17,13 @@ const menuItems = () => {
             });
         });
 
-        document.body.addEventListener("mousemove", (event) => {
-            if (!event.target.closest(".main") || event.target.closest(".main") && event.target.closest(".two-mini")) {
-                menuMini.style.display = "block";
-            } else {
-                menuMini.style.display = "none";
-            }
+        
 
-            if (event.target.closest(".modal_offer") || event.target.closest(".modal_support")) {
+        window.addEventListener("scroll", () => {
+            if (pageYOffset < 250) {
                 menuMini.style.display = "none";
+            } else {
+                menuMini.style.display = "block";
             }
         });
     });
