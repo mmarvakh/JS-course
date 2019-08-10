@@ -1,17 +1,28 @@
-const main = document.querySelector(".tc");
-
 const menuItems = () => {
-    const menuItems = main.querySelectorAll("span");
+    const menu = document.querySelectorAll(".tc"),
+          menuMini = document.querySelector(".two-mini");
 
-    menuItems.forEach((elem) => {
-        const elemId = elem.querySelector("a");
-              elemId.style.pointerEvents = "none";
-              elem.style.cursor = "pointer";  
+    menu.forEach((elem) => {
+        const menuItems = elem.querySelectorAll("span");
+
+        menuItems.forEach((elem) => {
+            const elemId = elem.querySelector("a");
+                  elemId.style.pointerEvents = "none";
+                  elem.style.cursor = "pointer";  
         
-        elem.addEventListener("click", () => {
-            const elemIdHref = elemId.getAttribute("href").slice(1),
-                  blockId = document.getElementById(`${elemIdHref}`);
-                  blockId.scrollIntoView({behavior: "smooth"});
+            elem.addEventListener("click", () => {
+                const elemIdHref = elemId.getAttribute("href").slice(1),
+                      blockId = document.getElementById(`${elemIdHref}`);
+                      blockId.scrollIntoView({behavior: "smooth"});
+            });
+        });
+
+        document.body.addEventListener("mousemove", (event) => {
+            if (!event.target.closest(".main") || event.target.closest(".main") && event.target.closest(".two-mini")) {
+                menuMini.style.display = "block";
+            } else {
+                menuMini.style.display = "none";
+            }
         });
     });
 };
