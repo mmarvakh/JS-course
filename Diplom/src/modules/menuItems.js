@@ -23,6 +23,10 @@ const menuItems = () => {
             } else {
                 menuMini.style.display = "none";
             }
+
+            if (event.target.closest(".modal_offer") || event.target.closest(".modal_support")) {
+                menuMini.style.display = "none";
+            }
         });
     });
 };

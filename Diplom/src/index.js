@@ -12,6 +12,7 @@ import "formdata-polyfill";
 import scrollToNextPage from "./modules/scrollToNextPage";
 import menuItems from "./modules/menuItems";
 import modalSupport from "./modules/modalSupport";
+import modalOffer from "./modules/modalOffer";
 
 // Переход на следующий слайд по нажатию на кнопку в виде стрелки
 scrollToNextPage();
@@ -21,3 +22,6 @@ menuItems();
 
 // Открытие и закрытие модального окна(Техподдержка)
 modalSupport();
+
+// Открытие и закрытие модального окна(Оставить заявку)
+modalOffer();
