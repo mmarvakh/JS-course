@@ -14,6 +14,8 @@ import menuItems from "./modules/menuItems";
 import modalSupport from "./modules/modalSupport";
 import modalOffer from "./modules/modalOffer";
 import calculator from "./modules/calculator";
+import validation from "./modules/validation";
+import ajax from "./modules/ajax";
 
 // Переход на следующий слайд по нажатию на кнопку в виде стрелки
 scrollToNextPage();
@@ -29,3 +31,9 @@ modalOffer();
 
 // Калькулятор расчета стоимости услуг
 calculator();
+
+// Валидация форм
+validation();
+
+// Ajax отправка форм
+ajax();
