@@ -6,20 +6,17 @@ const modalSupport = () => {
     if (document.documentElement.offsetWidth < 768) {
         supportBtn.style.transform = "translateX(0)";
     }
+    let count = 0;
 
     supportBtn.addEventListener("click", () => {
-        modalSupport.style.display = "block";
-    });
+        count++;
 
-    supportBtn.addEventListener("mouseover", () => {
-        if (document.documentElement.offsetWidth < 768) {
+        if (document.documentElement.offsetWidth < 768 && count === 1) {
             supportBtn.style.transform = "translateX(-60%)";
-        }
-    });
-
-    supportBtn.addEventListener("mouseout", () => {
-        if (document.documentElement.offsetWidth < 768) {
+        } else if (count === 2 || document.documentElement.offsetWidth > 768) {
+            modalSupport.style.display = "block";
             supportBtn.style.transform = "translateX(0)";
+            count = 0;
         }
     });
 
