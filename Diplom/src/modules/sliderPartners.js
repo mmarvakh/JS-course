@@ -1,4 +1,4 @@
-const slider = () => {
+const sliderPartners = () => {
     const partnersBlock = document.querySelector(".ten-partners"),
           slides = partnersBlock.querySelectorAll(".sl-slide"),
           arrowRight = document.getElementById("arrow-right"),
@@ -141,4 +141,4 @@ const slider = () => {
     }
 };
 
-export default slider;
+export default sliderPartners;

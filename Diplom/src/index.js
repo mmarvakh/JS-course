@@ -16,7 +16,9 @@ import modalOffer from "./modules/modalOffer";
 import calculator from "./modules/calculator";
 import validation from "./modules/validation";
 import ajax from "./modules/ajax";
-import slider from "./modules/slider";
+import sliderPartners from "./modules/sliderPartners";
+import sliderReviews from "./modules/sliderReviews";
+import modalTrewTime from "./modules/modalTrewTime";
 
 // Переход на следующий слайд по нажатию на кнопку в виде стрелки
 scrollToNextPage();
@@ -39,5 +41,11 @@ validation();
 // Ajax отправка форм
 ajax();
 
-// Слайдер с отзывами и компаниями
-slider();
+// Слайдер с компаниями
+sliderPartners();
+
+// Слайдер с отзывами
+sliderReviews();
+
+// Открытие модального окна без участия пользователя после 60 секунд
+modalTrewTime();

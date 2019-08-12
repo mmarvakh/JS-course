@@ -21,9 +21,9 @@ const scrollToNextPage = () => {
               buttonSix = sixthSection.querySelector("a"),
               buttonSeven = seventhSection.querySelector("a"),
               buttonEight = eighthSection.querySelector("a"),
-              buttonNine = ninethSection.querySelectorAll("a")[2],
+              buttonNine = ninethSection.querySelectorAll("a")[4],
               buttonTen = tenthSection.querySelector("a"),
-              buttonEleven = eleventhSection.querySelectorAll("a");
+              buttonEleven = eleventhSection.querySelectorAll("a")[2];
 
         // Переход на следующий слайд для каждой кнопки
         buttonOne.forEach((elem) => {
@@ -90,14 +90,10 @@ const scrollToNextPage = () => {
             eleventhSection.scrollIntoView({behavior: "smooth"});
         });
 
-        buttonEleven.forEach((elem) => {
-            if (elem.getAttribute("href") === "#map") {
-                elem.removeAttribute("href");
-                elem.style.cursor = "pointer";
-                elem.addEventListener("click", () => {
-                    mapSection.scrollIntoView({behavior: "smooth"});
-                });
-            }
+        buttonEleven.removeAttribute("href");
+        buttonEleven.style.cursor = "pointer";
+        buttonEleven.addEventListener("click", () => {
+            mapSection.scrollIntoView({behavior: "smooth"});
         });
         
     };
