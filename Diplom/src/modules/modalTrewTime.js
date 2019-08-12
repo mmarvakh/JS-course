@@ -1,6 +1,7 @@
 const modalTrewTime = () => {
     const modalOffer = document.querySelector(".modal_offer"),
-          allBtn = document.querySelectorAll("button");
+          allBtn = document.querySelectorAll("button"),
+          targetBlock = document.getElementById("map");
 
     let count = 0;
 
@@ -21,11 +22,20 @@ const modalTrewTime = () => {
     }, 60000);
 
     window.addEventListener("scroll", () => {
-        if (pageYOffset > 10500 && count === 0 ) {
+        if (pageYOffset > 10000 && count === 0) {
             modalOffer.style.display = "block";
             count++;
         }
     });
+
+    targetBlock.addEventListener("mouseenter", () => {
+        if (count === 0) {
+            modalOffer.style.display = "block";
+            count++;
+        }
+    });
+
+
 };
 
 export default modalTrewTime;
