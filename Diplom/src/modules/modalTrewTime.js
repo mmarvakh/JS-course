@@ -34,8 +34,6 @@ const modalTrewTime = () => {
             count++;
         }
     });
-
-
 };
 
 export default modalTrewTime;
