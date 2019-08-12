@@ -16,6 +16,7 @@ import modalOffer from "./modules/modalOffer";
 import calculator from "./modules/calculator";
 import validation from "./modules/validation";
 import ajax from "./modules/ajax";
+import slider from "./modules/slider";
 
 // Переход на следующий слайд по нажатию на кнопку в виде стрелки
 scrollToNextPage();
@@ -37,3 +38,6 @@ validation();
 
 // Ajax отправка форм
 ajax();
+
+// Слайдер с отзывами и компаниями
+slider();

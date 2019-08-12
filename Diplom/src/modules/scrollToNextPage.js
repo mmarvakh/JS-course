@@ -21,7 +21,7 @@ const scrollToNextPage = () => {
               buttonSix = sixthSection.querySelector("a"),
               buttonSeven = seventhSection.querySelector("a"),
               buttonEight = eighthSection.querySelector("a"),
-              buttonNine = ninethSection.querySelector("a"),
+              buttonNine = ninethSection.querySelectorAll("a")[2],
               buttonTen = tenthSection.querySelector("a"),
               buttonEleven = eleventhSection.querySelectorAll("a");
 
