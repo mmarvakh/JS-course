@@ -24,8 +24,7 @@ const accordion = () => {
             arrayForBlocks[indexOfElem].parentNode.classList.remove("d-none");
             arrayForBlocks[indexOfElem].classList.add("d-active");
         });
-    });
-          
+    });    
 };
 
 export default accordion;
