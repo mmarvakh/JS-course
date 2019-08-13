@@ -6818,7 +6818,7 @@ button.bg-dark:hover {
 }
 
 .d-none {
-    display: none !important
+    display: none !important;
 }
 
 .d-inline {

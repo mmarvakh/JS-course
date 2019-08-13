@@ -8,8 +8,7 @@ const accordion = () => {
           
     const hideBlock = () => {
         arrayForBlocks.forEach((elem) => {
-            if (!elem.matches(".d-none")) {
-                elem.classList.add("d-none");
+            if (!elem.parentNode.matches(".d-none")) {
                 elem.parentNode.classList.add("d-none");
             }
         });
@@ -23,6 +22,7 @@ const accordion = () => {
 
             arrayForBlocks[indexOfElem].classList.remove("d-none");
             arrayForBlocks[indexOfElem].parentNode.classList.remove("d-none");
+            arrayForBlocks[indexOfElem].classList.add("d-active");
         });
     });
           
