@@ -2,8 +2,9 @@ const modalTrewTime = () => {
     const modalOffer = document.querySelector(".modal_offer"),
           allBtn = document.querySelectorAll("button"),
           targetBlock = document.getElementById("map"),
-          allLinks = document.querySelectorAll("a"),
           paragraphsBlock = document.getElementById("eleven"),
+          newsBlock = document.getElementById("twelve"),
+          allLinks = newsBlock.querySelectorAll("a"),
           allParagraphs = paragraphsBlock.querySelectorAll("p");
 
     let count = 0;
@@ -22,7 +23,9 @@ const modalTrewTime = () => {
 
     allLinks.forEach((elem) => {
         elem.addEventListener("click", () => {
-            count++;
+            if (!elem.matches("img")) {
+                count++;
+            }
         });
     });
 
