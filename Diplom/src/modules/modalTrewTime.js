@@ -4,7 +4,8 @@ const modalTrewTime = () => {
           targetBlock = document.getElementById("map"),
           paragraphsBlock = document.getElementById("eleven"),
           newsBlock = document.getElementById("twelve"),
-          allLinks = newsBlock.querySelectorAll("a"),
+          linkOne = newsBlock.querySelectorAll("a")[0],
+          linkTwo = newsBlock.querySelectorAll("a")[1],
           allParagraphs = paragraphsBlock.querySelectorAll("p");
 
     let count = 0;
@@ -21,12 +22,12 @@ const modalTrewTime = () => {
         });
     });
 
-    allLinks.forEach((elem) => {
-        elem.addEventListener("click", () => {
-            if (!elem.matches("img")) {
-                count++;
-            }
-        });
+    linkOne.addEventListener("click", () => {
+        count++;
+    });
+
+    linkTwo.addEventListener("click", () => {
+        count++;
     });
 
     const modalPopup = () => {
