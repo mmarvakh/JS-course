@@ -20,6 +20,7 @@ import sliderPartners from "./modules/sliderPartners";
 import sliderReviews from "./modules/sliderReviews";
 import modalTrewTime from "./modules/modalTrewTime";
 import restrictionText from "./modules/restrictionText";
+import accordion from "./modules/accordion";
 
 // Переход на следующий слайд по нажатию на кнопку в виде стрелки
 scrollToNextPage();
@@ -53,3 +54,6 @@ modalTrewTime();
 
 // Ограничение символов в тексте блока новостей
 restrictionText();
+
+// Аккордеон
+accordion();

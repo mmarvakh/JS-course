@@ -2,11 +2,19 @@ const modalTrewTime = () => {
     const modalOffer = document.querySelector(".modal_offer"),
           allBtn = document.querySelectorAll("button"),
           targetBlock = document.getElementById("map"),
-          allLinks = document.querySelectorAll("a");
+          allLinks = document.querySelectorAll("a"),
+          paragraphsBlock = document.getElementById("eleven"),
+          allParagraphs = paragraphsBlock.querySelectorAll("p");
 
     let count = 0;
 
     allBtn.forEach((elem) => {
+        elem.addEventListener("click", () => {
+            count++;
+        });
+    });
+
+    allParagraphs.forEach((elem) => {
         elem.addEventListener("click", () => {
             count++;
         });
