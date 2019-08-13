@@ -922,8 +922,7 @@ tr.seven-table-cloud td {
 }
 
 .sl2 img {
-    display: flex;
-    margin: 0 auto
+    cursor: pointer;
 }
 
 .sl2 strong {
@@ -1449,34 +1448,21 @@ textarea::placeholder {
                   width: 35px;
                   height: 35px; }
                   
-                  .partners-btn-two {
-                    position: absolute;
-                    cursor: pointer;
-                    z-index: 1000;
-                    width: 100px;
-                    height: 100px;
-                    background-repeat: no-repeat;
-                }
-                .partners-btn-two.prev {
-                      
-                      background-image: url("../img/Block10/arrowleft.png");}
-                    .partners-btn-two.next {
-                      
-                      background-image: url("../img/Block10/arrowright.png");
-                           
-                    }
-                
-                      @media (max-width: 690px) {
-                        .partners-btn-two {
-                          width: 40px;
-                          height: 40px; }
-                          
-                
-                            @media (max-width: 448px) {
-                                .partners-btn-two {
-                                  width: 35px;
-                                  height: 35px; }
-              
+.arrow-right-two, .arrow-left-two {
+    width: 100px;
+    height: 100px;
+}
+
+@media (max-width: 690px) {
+    .arrow-right-two, .arrow-left-two {
+      width: 40px;
+      height: 40px; }
+      
+
+        @media (max-width: 448px) {
+            .arrow-right-two, .arrow-left-two {
+              width: 35px;
+              height: 35px; }
 
 @media screen and (max-width: 1199px) {
     .main-contacts {
@@ -2164,10 +2150,6 @@ textarea::placeholder {
 
     .sacrifice {
         display: none
-    }
-
-    .sl2 {
-        width: 70%
     }
 
     .sl2 strong {
