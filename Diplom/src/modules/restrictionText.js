@@ -13,7 +13,7 @@ const restrictionText = () => {
           cloneParagraphRight = rightParagraph.textContent;
     
     leftParagraph.textContent = leftParagraph.textContent.slice(0, 55) + "...";
-    rightParagraph.textContent = rightParagraph.textContent.slice(0, 65) + "...";
+    rightParagraph.textContent = rightParagraph.textContent.slice(0, 55) + "...";
 
     let countLeft = 0,
         countRight = 0;
