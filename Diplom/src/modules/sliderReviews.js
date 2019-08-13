@@ -26,7 +26,9 @@ const sliderReviews = () => {
             currentSlide = 0;
         }
 
+        arraySlideReview[currentSlide].style.opacity = 0;
         arraySlideReview[currentSlide].style.display = "block";
+        arraySlideReview[currentSlide].classList.add("d-active");
     };
 
     const prevSlide = () => {
@@ -38,7 +40,9 @@ const sliderReviews = () => {
             currentSlide = 2;
         }
 
+        arraySlideReview[currentSlide].style.opacity = 0;
         arraySlideReview[currentSlide].style.display = "block";
+        arraySlideReview[currentSlide].classList.add("d-active");
     };
 
     arrowsRight.forEach((elem) => {
