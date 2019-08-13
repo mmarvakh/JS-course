@@ -18,6 +18,7 @@ const modalTrewTime = () => {
     setTimeout(() => {
         if (count === 0) {
             modalPopup();
+            count++;
         }
     }, 60000);
 
@@ -34,8 +35,6 @@ const modalTrewTime = () => {
             count++;
         }
     });
-
-
 };
 
 export default modalTrewTime;

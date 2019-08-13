@@ -19,6 +19,7 @@ import ajax from "./modules/ajax";
 import sliderPartners from "./modules/sliderPartners";
 import sliderReviews from "./modules/sliderReviews";
 import modalTrewTime from "./modules/modalTrewTime";
+import restrictionText from "./modules/restrictionText";
 
 // Переход на следующий слайд по нажатию на кнопку в виде стрелки
 scrollToNextPage();
@@ -49,3 +50,6 @@ sliderReviews();
 
 // Открытие модального окна без участия пользователя после 60 секунд
 modalTrewTime();
+
+// Ограничение символов в тексте блока новостей
+restrictionText();
