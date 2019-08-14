@@ -15,6 +15,26 @@ const sliderReviews = () => {
     };
     removeSlide();
 
+    window.addEventListener("resize", () => {
+        if (document.documentElement.offsetWidth < 768) {
+            arrowsRight.forEach((elem) => {
+                elem.style.marginLeft = "10%";
+            })
+
+            arrowsLeft.forEach((elem) => {
+                elem.style.marginRight = "10%";
+            })
+        } else {
+            arrowsRight.forEach((elem) => {
+                elem.style.marginLeft = "30%";
+            })
+
+            arrowsLeft.forEach((elem) => {
+                elem.style.marginRight = "30%";
+            })
+        }
+    });
+
     let currentSlide = 0;
 
     const nextSlide = () => { 
